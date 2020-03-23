@@ -1,4 +1,13 @@
-﻿.vs/
+﻿# C#
+
+.vs/
 [Bb]in/
 [Oo]bj/
 [Pp]ackages/
+
+# JavaScript
+node_modules/
+
+# Rust
+/target/
+Cargo.lock
