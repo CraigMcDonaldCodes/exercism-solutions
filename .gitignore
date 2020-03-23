@@ -1,5 +1,4 @@
 ﻿# C#
-
 .vs/
 [Bb]in/
 [Oo]bj/
@@ -11,3 +10,6 @@ node_modules/
 # Rust
 /target/
 Cargo.lock
+
+# Exercism
+.exercism/
