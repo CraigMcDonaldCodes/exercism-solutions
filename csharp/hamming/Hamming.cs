@@ -11,7 +11,7 @@ public static class Hamming
 
         int count = 0;
 
-        for(int i = 0; i < firstStrand.Length; count++)
+        for(int i = 0; i < firstStrand.Length; i++)
         {
             if (firstStrand[i] != secondStrand[i]) { count++; }
         }
