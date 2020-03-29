@@ -11,5 +11,8 @@ node_modules/
 /target/
 Cargo.lock
 
+# C++
+out/
+
 # Exercism
 .exercism/

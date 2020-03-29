@@ -7,5 +7,6 @@ Solutions to Exercism exercises.
  * C#
  * JavaScript
  * Rust
+ * C++
 
 <https://exercism.io>
