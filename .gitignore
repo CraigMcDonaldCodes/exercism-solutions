@@ -7,8 +7,9 @@
 # JavaScript
 node_modules/
 
-# C++
-out/
+# Rust
+Cargo.lock
+target/
 
 # Exercism
 .exercism/
