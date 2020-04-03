@@ -13,7 +13,7 @@ public class BeerSongTests
         Assert.Equal(expected, BeerSong.Recite(99, 1));
     }
 
-    [Fact(Skip = "Remove to run test")]
+    [Fact]
     public void Last_generic_verse()
     {
         var expected = 
@@ -22,7 +22,7 @@ public class BeerSongTests
         Assert.Equal(expected, BeerSong.Recite(3, 1));
     }
 
-    [Fact(Skip = "Remove to run test")]
+    [Fact]
     public void Verse_with_2_bottles()
     {
         var expected = 
