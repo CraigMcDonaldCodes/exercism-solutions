@@ -4,10 +4,9 @@ public static class IsbnVerifier
 {
     public static bool IsValid(string isbnNumber)
     {
-        if (string.IsNullOrEmpty(isbnNumber) ||
-            isbnNumber.Length != 13)
+        if (string.IsNullOrEmpty(isbnNumber))
         {
-                return false;
+            return false;
         }
 
         long result = 0;
@@ -15,9 +14,18 @@ public static class IsbnVerifier
 
         foreach (var item in isbnNumber)
         {
-            if (item == '-')             { continue; }
-            else if (item == 'X')        { result += 10; }
-            else if (char.IsDigit(item)) { result += multiplier * (long)item; }
+            if (item == '-')
+            {
+                continue;
+            }
+            else if (item == 'X' || item == 'x')
+            {
+                result += 10;
+            }
+            else if (char.IsDigit(item))
+            {
+                result += multiplier * (long)item;
+            }
             multiplier--;
         }
 

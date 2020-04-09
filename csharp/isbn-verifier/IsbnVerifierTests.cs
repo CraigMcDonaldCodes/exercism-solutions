@@ -52,19 +52,19 @@ public class IsbnVerifierTests
         Assert.True(IsbnVerifier.IsValid("359821507X"));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Isbn_without_check_digit_and_dashes()
     {
         Assert.False(IsbnVerifier.IsValid("359821507"));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Too_long_isbn_and_no_dashes()
     {
         Assert.False(IsbnVerifier.IsValid("3598215078X"));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Too_short_isbn()
     {
         Assert.False(IsbnVerifier.IsValid("00"));
