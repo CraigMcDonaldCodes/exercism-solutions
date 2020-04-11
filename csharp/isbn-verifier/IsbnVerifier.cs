@@ -1,10 +1,10 @@
-﻿using System;
+﻿using System.Text.RegularExpressions;
 
 public static class IsbnVerifier
 {
     public static bool IsValid(string isbnNumber)
     {
-        if (string.IsNullOrEmpty(isbnNumber))
+        if (isbnNumber == null || !ValidIsbnString(isbnNumber))
         {
             return false;
         }
@@ -20,7 +20,7 @@ public static class IsbnVerifier
             }
             else if (item == 'X' || item == 'x')
             {
-                result += 10;
+                result += multiplier * 10;
             }
             else if (char.IsDigit(item))
             {
@@ -30,5 +30,11 @@ public static class IsbnVerifier
         }
 
         return result % 11 == 0;
+    }
+
+    private static bool ValidIsbnString(string isbnNumber)
+    {
+        var regexMatch = new Regex(@"^\d-?\d\d\d-?\d\d\d\d\d-?(\d|x|X)$").Match(isbnNumber);
+        return regexMatch.Success;
     }
 }
