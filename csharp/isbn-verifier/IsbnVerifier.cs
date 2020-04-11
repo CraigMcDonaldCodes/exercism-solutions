@@ -18,13 +18,13 @@ public static class IsbnVerifier
             {
                 continue;
             }
-            else if (item == 'X' || item == 'x')
-            {
-                result += multiplier * 10;
-            }
-            else if (char.IsDigit(item))
+            else if (char.IsNumber(item))
             {
                 result += multiplier * (long)item;
+            }
+            else if (item == 'x' || item == 'X')
+            {
+                result += multiplier * 10;
             }
             multiplier--;
         }
@@ -34,7 +34,7 @@ public static class IsbnVerifier
 
     private static bool ValidIsbnString(string isbnNumber)
     {
-        var regexMatch = new Regex(@"^\d-?\d\d\d-?\d\d\d\d\d-?(\d|x|X)$").Match(isbnNumber);
+        var regexMatch = new Regex(@"^\d-?\d\d\d-?\d\d\d\d\d-?[\d|x|X]$").Match(isbnNumber);
         return regexMatch.Success;
     }
 }
