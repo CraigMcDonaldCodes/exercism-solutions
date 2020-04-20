@@ -15,7 +15,7 @@ export class HighScores {
   }
 
   get personalBest() {
-    throw new Error("Remove this statement and implement this function");
+    return Math.max(this._scores);
   }
 
   get personalTopThree() {
