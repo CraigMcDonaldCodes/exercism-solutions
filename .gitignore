@@ -5,6 +5,13 @@
 [Oo]bj/
 [Pp]ackages/
 
+# Java
+.gradle/
+.project
+.settings/
+build/
+
+
 # JavaScript
 node_modules/
 
