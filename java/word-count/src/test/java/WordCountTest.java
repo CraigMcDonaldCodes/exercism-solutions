@@ -165,6 +165,7 @@ public class WordCountTest {
         );
     }
 
+    @Ignore("Remove to run test")
     @Test
     public void multipleSpacesNotDetectedAsAWord() {
         expectedWordCount.put("multiple", 1);
@@ -176,7 +177,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void alternatingWordSeperatorsNotDetectedAsAWord() {
         expectedWordCount.put("one", 1);

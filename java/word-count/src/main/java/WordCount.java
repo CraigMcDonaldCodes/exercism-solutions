@@ -8,10 +8,11 @@ public class WordCount {
         sentence = sentence.toLowerCase();
 
         var map = new HashMap<String, Integer>();
-        // String[] words = sentence.split("[ ,\n:\\.]+");
         String[] words = sentence.split("[^\\w\\d']+");
 
         for(String w: words) {
+
+            word = word.
 
             if (map.containsKey(w)) {
                 map.put(w, map.get(w) + 1);
