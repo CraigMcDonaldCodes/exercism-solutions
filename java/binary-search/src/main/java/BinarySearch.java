@@ -3,13 +3,6 @@ import java.util.Objects;
 
 public class BinarySearch {
 
-    public static void main(String... args) {
-
-        DEBUG = true;
-    }
-
-    private static final int NOT_FOUND = -1;
-    private static boolean DEBUG = false;
     private List<Integer> list;
 
     public BinarySearch(List<Integer> list) {
@@ -20,30 +13,38 @@ public class BinarySearch {
 
     public int indexOf(int toFind) throws ValueNotFoundException {
 
-        int upper = list.size() - 1;
+        // Quick test for an empty list
+        if (list.size() == 0) { throw new ValueNotFoundException("Value not in array"); }
+
+        final int MAX_INDEX = list.size() - 1;
+        final int MIN_INDEX = 0;
+        int upper = MAX_INDEX;
         int lower = 0;
-        int index;
-        int current;
+        int current = list.get(0);
+        int index = (lower + upper) / 2;
+        int lastIndex = Integer.MIN_VALUE;
 
-        while (true) {
+        while ((index != MAX_INDEX) && (index != MIN_INDEX)) {
 
-            index = (upper + lower) / 2;
+            index = (lower + upper) / 2;
+            if (lastIndex == index) { break; }
+
             current = list.get(index);
 
             if (current == toFind) { break; }
-            if (upper == lower)    { break; }
 
             if (toFind > current) {
-                lower = index;
+
+                if (MAX_INDEX == index + 1) {
+                    lower = index + 1;
+                } else {
+                    lower = index;
+                }
             } else {
                 upper = index;
             }
 
-            if (DEBUG) {
-                System.out.println("index: " + index);
-                System.out.println("upper: " + upper);
-                System.out.println("lower: " + lower);
-            }
+            lastIndex = index;
         }
 
         if (current == toFind) {

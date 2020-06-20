@@ -42,7 +42,6 @@ public class BinarySearchTest {
         assertEquals(0, search.indexOf(1));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void findsAValueAtTheEndOfAnArray() throws ValueNotFoundException {
         List<Integer> sortedList = Collections.unmodifiableList(
@@ -76,7 +75,6 @@ public class BinarySearchTest {
         assertEquals(5, search.indexOf(21));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void identifiesThatAValueIsNotFoundInTheArray() {
         List<Integer> sortedList = Collections.unmodifiableList(
@@ -93,7 +91,6 @@ public class BinarySearchTest {
         assertThat(expected).hasMessage("Value not in array");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aValueSmallerThanTheArraysSmallestValueIsNotFound() {
         List<Integer> sortedList = Collections.unmodifiableList(
@@ -110,7 +107,6 @@ public class BinarySearchTest {
         assertThat(expected).hasMessage("Value not in array");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aValueLargerThanTheArraysSmallestValueIsNotFound() throws ValueNotFoundException {
         List<Integer> sortedList = Collections.unmodifiableList(
