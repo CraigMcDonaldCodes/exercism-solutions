@@ -20,7 +20,6 @@ public class ErrorHandlingTest {
             errorHandling::handleErrorByThrowingIllegalArgumentException);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrowIllegalArgumentExceptionWithDetailMessage() {
         IllegalArgumentException expected =
@@ -33,7 +32,6 @@ public class ErrorHandlingTest {
         assertThat(expected).hasMessage("This is the detail message.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrowAnyCheckedException() {
         Exception expected =
@@ -43,7 +41,6 @@ public class ErrorHandlingTest {
         assertThat(expected).isNotInstanceOf(RuntimeException.class);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrowAnyCheckedExceptionWithDetailMessage() {
         Exception expected =
@@ -56,7 +53,6 @@ public class ErrorHandlingTest {
         assertThat(expected).hasMessage("This is the detail message.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrowAnyUncheckedException() {
         assertThrows(
@@ -64,7 +60,6 @@ public class ErrorHandlingTest {
             errorHandling::handleErrorByThrowingAnyUncheckedException);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrowAnyUncheckedExceptionWithDetailMessage() {
         RuntimeException expected =
@@ -76,7 +71,6 @@ public class ErrorHandlingTest {
         assertThat(expected).hasMessage("This is the detail message.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrowCustomCheckedException() {
         assertThrows(
@@ -84,7 +78,6 @@ public class ErrorHandlingTest {
             errorHandling::handleErrorByThrowingCustomCheckedException);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrowCustomCheckedExceptionWithDetailMessage() {
         CustomCheckedException expected =
@@ -96,7 +89,6 @@ public class ErrorHandlingTest {
         assertThat(expected).hasMessage("This is the detail message.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrowCustomUncheckedException() {
         assertThrows(
@@ -104,7 +96,6 @@ public class ErrorHandlingTest {
             errorHandling::handleErrorByThrowingCustomUncheckedException);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testThrowCustomUncheckedExceptionWithDetailMessage() {
         CustomUncheckedException expected =
@@ -116,7 +107,6 @@ public class ErrorHandlingTest {
         assertThat(expected).hasMessage("This is the detail message.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testReturnOptionalInstance() {
         Optional<Integer> successfulResult = errorHandling.handleErrorByReturningOptionalInstance("1");
