@@ -5,8 +5,8 @@ Solutions to Exercism exercises.
 ### Languages
 
  * Java
- * C#
  * JavaScript
  * Rust
+ * C#
 
 <https://exercism.io>
