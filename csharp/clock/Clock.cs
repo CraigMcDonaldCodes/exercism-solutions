@@ -7,13 +7,20 @@ public class Clock
     private static int MinMinutes = 0;
     private static int MaxMinutes = 60;
 
-    private int _hours;
-    private int _minutes;
+    private readonly int _hours;
+    private readonly int _minutes;
 
     public Clock(int hours, int minutes)
     {
         _hours = hours;
-        _minutes = minutes;
+
+        if (minutes >= MaxMinutes)
+        {
+            _hours += minutes / MaxMinutes;
+        }
+
+        _minutes = minutes % MaxMinutes;
+        _hours %= MaxHours;
     }
 
     public Clock Add(int minutesToAdd)
