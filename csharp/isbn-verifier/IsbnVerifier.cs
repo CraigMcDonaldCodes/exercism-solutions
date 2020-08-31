@@ -1,40 +1,37 @@
-﻿using System.Text.RegularExpressions;
-
-public static class IsbnVerifier
+﻿public static class IsbnVerifier
 {
-    public static bool IsValid(string isbnNumber)
+    public static bool IsValid(string isbnString)
     {
-        if (isbnNumber == null || !ValidIsbnString(isbnNumber))
+        string isbn = isbnString.Replace("-", "").ToLower();
+
+        if (isbn.Length != 10)
         {
             return false;
         }
 
-        long result = 0;
-        int multiplier = 10;
+        int sum = 0;
+        int count = 10;
 
-        foreach (var item in isbnNumber)
+        foreach (var value in isbn)
         {
-            if (item == '-')
+            if (char.IsNumber(value))
             {
-                continue;
+                sum += (int)char.GetNumericValue(value) * count;
             }
-            else if (char.IsNumber(item))
+            else if (value == 'x' && count == 1)
             {
-                result += multiplier * (long)item;
+                sum += 10;
             }
-            else if (item == 'x' || item == 'X')
+            else
             {
-                result += multiplier * 10;
+                // Some value that is not valid, finish early
+                sum = -1;
+                break;
             }
-            multiplier--;
+
+            count--;
         }
 
-        return result % 11 == 0;
-    }
-
-    private static bool ValidIsbnString(string isbnNumber)
-    {
-        var regexMatch = new Regex(@"^\d-?\d\d\d-?\d\d\d\d\d-?[\d|x|X]$").Match(isbnNumber);
-        return regexMatch.Success;
+        return sum % 11 == 0;
     }
 }
