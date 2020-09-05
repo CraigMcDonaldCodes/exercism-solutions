@@ -5,6 +5,7 @@ Solutions to Exercism exercises.
 ### Languages
 
  * C#
+ * Go
  * JavaScript
  * Rust
  * Java
