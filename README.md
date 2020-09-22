@@ -4,10 +4,11 @@ Solutions to Exercism exercises.
 
 ### Languages
 
- * C#
- * Go
+ * Java
+ * C
  * JavaScript
  * Rust
- * Java
+ * Go
+ * C#
 
 <https://exercism.io>
