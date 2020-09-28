@@ -22,7 +22,7 @@ public class School {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public void add(final String name, final int grade) {
 
-        if (inValidGrade(grade)) { throw new IllegalArgumentException(MSG_OUT_OF_RANGE); }
+        if (invalidGrade(grade)) { throw new IllegalArgumentException(MSG_OUT_OF_RANGE); }
 
         grades.get(grade).add(name);
     }
@@ -31,7 +31,7 @@ public class School {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public List<String> grade(final int grade) {
 
-        if (inValidGrade(grade)) { throw new IllegalArgumentException(MSG_OUT_OF_RANGE); }
+        if (invalidGrade(grade)) { throw new IllegalArgumentException(MSG_OUT_OF_RANGE); }
 
         return new ArrayList<String>(grades.get(grade));
     }
@@ -63,7 +63,7 @@ public class School {
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    private boolean inValidGrade(final int grade) {
+    private boolean invalidGrade(final int grade) {
 
         return grade < MIN_GRADE
                ||
