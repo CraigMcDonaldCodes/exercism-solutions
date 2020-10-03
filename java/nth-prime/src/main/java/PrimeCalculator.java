@@ -20,6 +20,7 @@ class PrimeCalculator {
     int nth(int nth) {
 
         if (nth < MIN_SIZE) { throw new IllegalArgumentException(); }
+
         if (primes.size() < nth) {
             updatePrimes(nth);
         }
