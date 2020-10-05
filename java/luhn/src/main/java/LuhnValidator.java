@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 // https://en.wikipedia.org/wiki/Luhn_algorithm
 class LuhnValidator {
 
@@ -13,27 +11,23 @@ class LuhnValidator {
             return false;
         }
 
-        int number = 0;
-
-        try {
-            number = Integer.parseInt(candidate.replace(" ", ""));
-        } catch (NumberFormatException e) {
-            return false;
-        }
+        String noSpace = candidate.replace(" ", "");
 
         int sum = 0;
         boolean mustDouble = false;
 
-        while (number > 0) {
+        for (int i = noSpace.length() - 1; i >= 0; i--) {
 
-            int end = number % 10;
+            int value = 0;
+            if (Character.isDigit(noSpace.charAt(i))) {
+                value = Character.getNumericValue(noSpace.charAt(i));
+            }
 
             if (mustDouble) {
+                value *= 2;
 
-                end *= 2;
-
-                if (end > MAX_VALUE) {
-                    end -= MAX_VALUE;
+                if (value > MAX_VALUE) {
+                    value -= MAX_VALUE;
                 }
 
                 mustDouble = false;
@@ -41,9 +35,7 @@ class LuhnValidator {
                 mustDouble = true;
             }
 
-            sum += end;
-
-            number /= 10;
+            sum += value;
         }
 
         return sum % 10 == 0;
