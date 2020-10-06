@@ -1,3 +1,8 @@
+// This code is not great, it could be cleaner/more concise
+
+import java.util.Objects;
+
+// Follow validation rules based on:
 // https://en.wikipedia.org/wiki/Luhn_algorithm
 class LuhnValidator {
 
@@ -6,24 +11,28 @@ class LuhnValidator {
 
     boolean isValid(final String candidate) {
 
-        // Early return
-        if (candidate == null || candidate.length() < MIN_LENGTH) {
+        Objects.requireNonNull(candidate);
+        String cleanCandidate = candidate.replace(" ", "");
+
+        if (cleanCandidate.length() < MIN_LENGTH) {
             return false;
         }
-
-        String noSpace = candidate.replace(" ", "");
 
         int sum = 0;
         boolean mustDouble = false;
 
-        for (int i = noSpace.length() - 1; i >= 0; i--) {
+        for (int i = cleanCandidate.length() - 1; i >= 0; i--) {
 
             int value = 0;
-            if (Character.isDigit(noSpace.charAt(i))) {
-                value = Character.getNumericValue(noSpace.charAt(i));
+
+            if (!Character.isDigit(cleanCandidate.charAt(i))) {
+                return false;
             }
 
+            value = Character.getNumericValue(cleanCandidate.charAt(i));
+
             if (mustDouble) {
+
                 value *= 2;
 
                 if (value > MAX_VALUE) {
