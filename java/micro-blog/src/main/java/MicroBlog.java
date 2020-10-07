@@ -1,6 +1,15 @@
 class MicroBlog {
 
+    private static final int MAX = 5;
+
     public String truncate(String input) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+
+        var sb = new StringBuilder();
+
+        input.codePoints()
+             .limit(MAX)
+             .forEach(cp -> sb.appendCodePoint(cp));
+
+        return sb.toString();
     }
 }
