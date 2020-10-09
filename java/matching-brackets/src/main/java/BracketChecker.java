@@ -1,11 +1,14 @@
+import java.util.Map;
 import java.util.Stack;
 
 public class BracketChecker {
 
     private final boolean matched;
+    private final Map<Character, Character> closingChar;
 
     ////////////////////////////////////////////////////////////////////////////////
     public BracketChecker(final String text) {
+        closingChar = Map.of(']', '[', '}', '{', ')', '(');
         matched = calculate(text);
     }
 
@@ -22,10 +25,24 @@ public class BracketChecker {
         var stack = new Stack<Character>();
 
         for (var c : text.toCharArray()) {
-            
-            // push l val [{(             
-            // pop  r val [{)
-            // checks matching pairs, break early
+
+            switch (c) {
+
+                case '[':
+                case '{':
+                case '(':
+                    stack.push(c);
+                    break;
+                case ']':
+                case '}':
+                case ')':
+                    if (stack.size() > 0 && (stack.peek() == closingChar.get(c))) {
+                        stack.pop();
+                    } else {
+                        return false;
+                    }
+                    break;
+            }
         }
 
         return stack.size() == 0;
