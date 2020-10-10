@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 class DiamondPrinter {
@@ -6,8 +7,12 @@ class DiamondPrinter {
 
     List<String> printToList(char a) {
 
+        var list = new ArrayList<String>();
         int index = alphabet.indexOf(a);
+        int length = ((index + 1) * 2) + 1;
 
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        for (int i = 0; i <= length / 2; i++) {
+
+        }
     }
 }
