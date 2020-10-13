@@ -7,7 +7,6 @@ public class PrimeFactorsCalculator {
     public List<Long> calculatePrimeFactorsOf(final long value) {
 
         final var list = new ArrayList<Long>();
-        long upperLimit = value / 2;
         long currentValue = value;
 
         if (value < 2) {
