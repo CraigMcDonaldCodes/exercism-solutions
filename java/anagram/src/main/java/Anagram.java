@@ -1,3 +1,5 @@
+// I may have overcomplicated this
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
@@ -11,19 +13,27 @@ public class Anagram {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public Anagram(String word) {
 
-        this.word= word.toLowerCase();
+        this.word = word;
         wordSummary = summarizeWord(word);
     }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    public List<String> match(List<String> words) {
+    public List<String> match(List<String> potentialWords) {
 
         var list = new ArrayList<String>();
 
-        for (String word : words) {
+        for (String potentialWord : potentialWords) {
 
-            var otherWordSummary = summarizeWord(word);
+            if (word.length() != potentialWord.length()) {
+                continue;
+            }
+
+            if (word.equalsIgnoreCase(potentialWord)) {
+                continue;
+            }
+
+            var otherWordSummary = summarizeWord(potentialWord);
             boolean validWord = true;
 
             for (char key : otherWordSummary.keySet()) {
@@ -36,7 +46,7 @@ public class Anagram {
             }
 
             if (validWord) {
-                list.add(word);
+                list.add(potentialWord);
             }
         }
 
@@ -50,7 +60,7 @@ public class Anagram {
         // TODO: Probably a nice way to use streams for this
         var map = new HashMap<Character, Integer>();
 
-        for (char c : word.toCharArray()) {
+        for (char c : word.toLowerCase().toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 

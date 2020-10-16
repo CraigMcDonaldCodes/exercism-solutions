@@ -26,7 +26,6 @@ public class AnagramTest {
             .containsExactlyInAnyOrder​("maters", "stream");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
@@ -121,7 +120,6 @@ public class AnagramTest {
             .isEmpty();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testWordsAreNotAnagramsOfThemselvesCaseInsensitive() {
         Anagram detector = new Anagram("BANANA");
