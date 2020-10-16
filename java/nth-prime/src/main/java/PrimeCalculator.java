@@ -46,7 +46,6 @@ class PrimeCalculator {
 
         // There will be a much better way of doing this
         if (value < FIRST_PRIME)      { return false; }
-        if (value == FIRST_PRIME)     { return true;  }
         if (value % FIRST_PRIME == 0) { return false; }
 
         final int max = value / 2;
