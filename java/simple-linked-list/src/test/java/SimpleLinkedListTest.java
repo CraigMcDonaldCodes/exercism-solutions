@@ -22,7 +22,6 @@ public class SimpleLinkedListTest {
         assertThat(list.size()).isEqualTo(3);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void popOnEmptyListWillThrow() {
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
@@ -32,7 +31,6 @@ public class SimpleLinkedListTest {
             list::pop);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void popReturnsLastAddedElement() {
         SimpleLinkedList<Integer> list = new SimpleLinkedList<Integer>();
@@ -44,7 +42,6 @@ public class SimpleLinkedListTest {
         assertThat(list.size()).isEqualTo(0);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void reverseReversesList() {
         SimpleLinkedList<String> list = new SimpleLinkedList<String>();
