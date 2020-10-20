@@ -58,7 +58,6 @@ public class SimpleLinkedListTest {
         assertThat(list.pop()).isEqualTo("5");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canReturnListAsArray() {
         SimpleLinkedList<Character> list = new SimpleLinkedList<Character>();
@@ -71,7 +70,6 @@ public class SimpleLinkedListTest {
         assertArrayEquals(expected, list.asArray(Character.class));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canReturnEmptyListAsEmptyArray() {
         SimpleLinkedList<Object> list = new SimpleLinkedList<Object>();

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class SimpleLinkedList<T> {
@@ -60,18 +61,36 @@ public class SimpleLinkedList<T> {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public void reverse() {
 
+        // No idea if this is a good solution
+        // feels like there is a better way
+
         Element<T> newHeadElement = null;
+        int newSize = 0;
 
         while (size > 0) {
-            newHeadElement = new Element<T>(currentElement, pop());
+            newHeadElement = new Element<T>(newHeadElement, pop());
+            newSize++;
         }
 
         currentElement = newHeadElement;
+        size = newSize;
     }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public T[] asArray(Class itemClass) {
-        return null;
+
+        // No idea why they want to pass in the `Class` param
+
+        var list = new ArrayList<T>();
+        var element = currentElement;
+
+        while (element != null) {
+            list.add(element.getData());
+            element = element.getParent();
+        }
+
+        // Ugly cast, not sure if a better way
+        return (T[]) list.toArray();
     }
 }
