@@ -8,8 +8,7 @@ public class Element<T> {
     ////////////////////////////////////////////////////////////////////////////////
     public Element(Element<T> parent, T data) {
 
-        // Objects.requireNonNull(parent);
-        // Objects.requireNonNull(data);
+        Objects.requireNonNull(data);
 
         this.parent = parent;
         this.data = data;
