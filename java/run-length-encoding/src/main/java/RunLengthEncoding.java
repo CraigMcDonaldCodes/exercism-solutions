@@ -13,7 +13,22 @@ public class RunLengthEncoding {
     ////////////////////////////////////////////////////////////////////////////////
     public String decode(final String text) {
 
-        return "";
+        if (text.length() < 2) { return text; }
+
+        var sb = new StringBuilder();
+        int multiplier = 1;
+
+        for (char c : text.toCharArray()) {
+
+            if (Character.isDigit(c)) {
+                multiplier = Character.getNumericValue(c);
+            } else {
+                sb.append(String.valueOf(c).repeat(multiplier));
+                multiplier = 1;
+            }
+        }
+
+        return sb.toString();
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -33,7 +48,6 @@ public class RunLengthEncoding {
                 count++;
             } else {
 
-                // TODO: Nope, wrong!
                 if (count > 1) {
                     sb.append(count);
                 }
@@ -44,6 +58,10 @@ public class RunLengthEncoding {
 
             current = c;
         }
+
+        // I think this is a bit hacky
+        if (count > 1) { sb.append(count); }
+        sb.append(current);
 
         return sb.toString();
     }
