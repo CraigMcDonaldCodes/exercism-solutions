@@ -5,9 +5,8 @@ public class RunLengthEncoding {
     public static void main(String... args) {
 
         var rle = new RunLengthEncoding();
-        System.out.println(rle.encode("XYZ"));
-        System.out.println(rle.encode("AAA"));
-        System.out.println(rle.encode("AAABBBBCDCD"));
+        System.out.print(rle.decode("3W10A"));
+        System.out.print(rle.decode("XYZ"));
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -17,15 +16,27 @@ public class RunLengthEncoding {
 
         var sb = new StringBuilder();
         int multiplier = 1;
+        char previous = text.charAt(0);
 
-        for (char c : text.toCharArray()) {
+        // TODO: Is there a better way than this?
+        if (Character.isDigit(previous)) { multiplier = Character.getNumericValue(previous); }
+
+        for (char c : text.substring(1).toCharArray()) {
 
             if (Character.isDigit(c)) {
-                multiplier = Character.getNumericValue(c);
+
+                if (Character.isDigit(previous)) {
+                    multiplier *= 10;
+                    multiplier += Character.getNumericValue(c);
+                } else {
+                    multiplier = Character.getNumericValue(c);
+                }
             } else {
                 sb.append(String.valueOf(c).repeat(multiplier));
                 multiplier = 1;
             }
+
+            previous = c;
         }
 
         return sb.toString();
