@@ -1,12 +1,11 @@
-
 public class RunLengthEncoding {
 
     // TODO: Remove after all tests are passing
     public static void main(String... args) {
 
         var rle = new RunLengthEncoding();
-        System.out.print(rle.decode("3W10A"));
-        System.out.print(rle.decode("XYZ"));
+        System.out.println(rle.decode("3W10A"));
+        System.out.println(rle.decode("XYZ"));
     }
 
     ////////////////////////////////////////////////////////////////////////////////
