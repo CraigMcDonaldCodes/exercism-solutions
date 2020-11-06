@@ -3,6 +3,10 @@
 
 #include <stdint.h>
 
+#define MERCURY 0.2408467
+#define VENUS 0.61519726
+#define EARTH 
+
 typedef enum planet {
    MERCURY,
    VENUS,
