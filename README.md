@@ -9,6 +9,6 @@ Solutions to Exercism exercises.
  * JavaScript
  * Rust
  * Go
- * C#
+ * ~~C#~~
 
 <https://exercism.io>
