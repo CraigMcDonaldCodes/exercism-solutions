@@ -18,6 +18,9 @@ node_modules/
 Cargo.lock
 target/
 
+# Python
+__pycache__/
+
 # Exercism
 .exercism/
 
