@@ -1,5 +1,7 @@
 public class Say {
 
+    private long MAX_VALUE = 999_999_999_999;
+
     private String[] numbers =
     {
         "zero",
@@ -13,6 +15,8 @@ public class Say {
     }
 
     public String say(long value) {
+
+
 
         return "zero";
     }
