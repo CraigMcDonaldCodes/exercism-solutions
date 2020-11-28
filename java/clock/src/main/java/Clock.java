@@ -1,10 +1,24 @@
-/*
+public class Clock {
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    private int hour;
+    private int minute;
 
-Please remove this comment when submitting your solution.
+    public Clock() {
+        this(0,0);
+    }
 
-*/
+    public Clock(int hour, int minute) {
+
+        // TODO Will need to validate these inputs
+        this.hour = hour;
+        this.minute = minute;
+    }
+
+
+    public void add(int value) {
+    }
+
+    public String toString() {
+        return String.format("%02d:%2d", hour, minute);
+    }
+}
