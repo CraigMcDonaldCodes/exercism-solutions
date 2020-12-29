@@ -10,6 +10,6 @@ Solutions to Exercism exercises.
  * Rust
  * Python
  * Go
- * ~~C#~~
+ * C#
 
 <https://exercism.io>
