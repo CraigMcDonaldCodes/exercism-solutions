@@ -1,13 +1,9 @@
 public class DoublyLinkedList<T> {
 
-    private static final int INITIAL_SIZE = 16;
     private Node<T> head;
     private Node<T> current;
 
     public DoublyLinkedList() {
-
-        // head = null;
-        // current = null;
     }
 
     public void push(T value) {
@@ -17,6 +13,7 @@ public class DoublyLinkedList<T> {
             current = head;
         } else {
             var newNode = new Node<T>(value);
+            newNode.setPrevious(current);
             current.setNext(newNode);
             current = newNode;
         }
