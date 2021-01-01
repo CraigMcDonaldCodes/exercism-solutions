@@ -5,14 +5,13 @@ public class WordCount {
 
     public static Map<String, Integer> phrase(String sentence) {
 
-        sentence = sentence.toLowerCase();
+        sentence = sentence.toLowerCase().trim();
 
         var map = new HashMap<String, Integer>();
-        String[] words = sentence.split("[^\\w\\d']+");
+        // String[] words = sentence.split("[^\\w\\d']+");
+        String[] words = sentence.split("[^\\w']+");
 
         for(String w: words) {
-
-            word = word.
 
             if (map.containsKey(w)) {
                 map.put(w, map.get(w) + 1);
