@@ -6,6 +6,7 @@ public class DoublyLinkedList<T> {
     public DoublyLinkedList() {
     }
 
+    ////////////////////////////////////////////////////////////////////////////////
     public void push(T value) {
 
         if (head == null) {
@@ -19,6 +20,7 @@ public class DoublyLinkedList<T> {
         }
     }
 
+    ////////////////////////////////////////////////////////////////////////////////
     public T pop() {
 
         // TODO Check for no head Node
@@ -30,7 +32,11 @@ public class DoublyLinkedList<T> {
         return value;
     }
 
+    ////////////////////////////////////////////////////////////////////////////////
     public T shift() {
+
+        // TODO Check for no head Node
+        // TODO Check that we do have a next Node
 
         T value = head.getValue();
         Node<T> newHead = head.getNext();
@@ -39,10 +45,19 @@ public class DoublyLinkedList<T> {
         return value;
     }
 
+    ////////////////////////////////////////////////////////////////////////////////
     public void unshift(T value) {
 
         var newHead = new Node<T>(value);
         newHead.setNext(head);
+
+        if (head != null) {
+            head.setPrevious(newHead);
+        }
         head = newHead;
+
+        if (current == null) {
+            current = head;
+        }
     }
 }
