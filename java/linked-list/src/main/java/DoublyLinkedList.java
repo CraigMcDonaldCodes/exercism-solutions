@@ -1,10 +1,10 @@
+// There will be bugs in this implementation
+// but it passes all the tests in the exercise.
+
 public class DoublyLinkedList<T> {
 
     private Node<T> head;
     private Node<T> current;
-
-    public DoublyLinkedList() {
-    }
 
     ////////////////////////////////////////////////////////////////////////////////
     public void push(T value) {
@@ -23,7 +23,9 @@ public class DoublyLinkedList<T> {
     ////////////////////////////////////////////////////////////////////////////////
     public T pop() {
 
-        // TODO Check for no head Node
+        if (current == null) {
+            throw new IllegalStateException("Nothing to pop.");
+        }
 
         T value = current.getValue();
         Node<T> tmp = current.getPrevious();
@@ -35,8 +37,10 @@ public class DoublyLinkedList<T> {
     ////////////////////////////////////////////////////////////////////////////////
     public T shift() {
 
-        // TODO Check for no head Node
-        // TODO Check that we do have a next Node
+
+        if (current == null) {
+            throw new IllegalStateException("Nothing to shift.");
+        }
 
         T value = head.getValue();
         Node<T> newHead = head.getNext();
@@ -54,6 +58,7 @@ public class DoublyLinkedList<T> {
         if (head != null) {
             head.setPrevious(newHead);
         }
+
         head = newHead;
 
         if (current == null) {
@@ -61,3 +66,4 @@ public class DoublyLinkedList<T> {
         }
     }
 }
+
