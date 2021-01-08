@@ -37,8 +37,7 @@ public class DoublyLinkedList<T> {
     ////////////////////////////////////////////////////////////////////////////////
     public T shift() {
 
-
-        if (current == null) {
+        if (head == null) {
             throw new IllegalStateException("Nothing to shift.");
         }
 
