@@ -1,4 +1,8 @@
+//
+// This is only a SKELETON file for the 'Space Age' exercise. It's been provided as a
+// convenience to get you started writing code faster.
+//
 
-export const age = (planet, age) => {
-  return Number((0.2408467 * age).toFixed(2));
+export const age = () => {
+  throw new Error("Remove this statement and implement this function");
 };
