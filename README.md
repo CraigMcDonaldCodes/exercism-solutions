@@ -8,6 +8,7 @@ Solutions to Exercism exercises.
  * C
  * JavaScript
  * Rust
+ * Kotlin
  * Python
  * Go
  * C#
