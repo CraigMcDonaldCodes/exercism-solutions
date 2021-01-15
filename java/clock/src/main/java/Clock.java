@@ -49,7 +49,7 @@ public class Clock {
             return (hour == otherClock.hour) &&
                    (minute == otherClock.minute);
         } else {
-            return true;
+            return false;
         }
     }
 
