@@ -6,31 +6,26 @@ import static org.junit.Assert.assertEquals;
 
 public class ClockEqualTest {
 
-    @Ignore("Remove to run test")
     @Test
     public void clocksWithSameTimeAreEqual() {
         assertEquals(new Clock(15, 37), new Clock(15, 37));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void clocksAMinuteApartAreNotEqual() {
         assertNotEquals(new Clock(15, 36), new Clock(15, 37));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void clocksAnHourApartAreNotEqual() {
         assertNotEquals(new Clock(14, 37), new Clock(15, 37));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void clocksWithHourOverflow() {
         assertEquals(new Clock(10, 37), new Clock(34, 37));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void clocksWithHourOverflowBySeveralDays() {
         assertEquals(new Clock(3, 11), new Clock(99, 11));

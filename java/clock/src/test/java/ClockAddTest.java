@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 
 public class ClockAddTest {
 
-    @Ignore("Remove to run test")
     @Test
     public void addMinutes() {
         Clock clock = new Clock(10, 0);
@@ -13,7 +12,6 @@ public class ClockAddTest {
         assertEquals("10:03", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addNoMinutes() {
         Clock clock = new Clock(6, 41);
@@ -21,7 +19,6 @@ public class ClockAddTest {
         assertEquals("06:41", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addToNextHour() {
         Clock clock = new Clock(0, 45);
@@ -29,7 +26,6 @@ public class ClockAddTest {
         assertEquals("01:25", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addMoreThanOneHour() {
         Clock clock = new Clock(10, 0);
@@ -37,7 +33,6 @@ public class ClockAddTest {
         assertEquals("11:01", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addMoreThanTwoHoursWithCarry() {
         Clock clock = new Clock(0, 45);
@@ -45,7 +40,6 @@ public class ClockAddTest {
         assertEquals("03:25", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addAcrossMidnight() {
         Clock clock = new Clock(23, 59);
@@ -53,7 +47,6 @@ public class ClockAddTest {
         assertEquals("00:01", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addMoreThanOneDay() {
         Clock clock = new Clock(5, 32);
@@ -61,7 +54,6 @@ public class ClockAddTest {
         assertEquals("06:32", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void addMoreThanTwoDays() {
         Clock clock = new Clock(1, 1);
@@ -69,7 +61,6 @@ public class ClockAddTest {
         assertEquals("11:21", clock.toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void subtractMinutes() {
         Clock clock = new Clock(10, 3);

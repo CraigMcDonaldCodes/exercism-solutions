@@ -10,61 +10,51 @@ public class ClockCreationTest {
         assertEquals("08:00", new Clock(8, 0).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canPrintTimeWithMinutes() {
         assertEquals("11:09", new Clock(11, 9).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void midnightPrintsAsZero() {
         assertEquals("00:00", new Clock(24, 0).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void hourRollsOver() {
         assertEquals("01:00", new Clock(25, 0).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void hourRollsOverContinuously() {
         assertEquals("04:00", new Clock(100, 0).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void sixtyMinutesIsNextHour() {
         assertEquals("02:00", new Clock(1, 60).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void minutesRollOver() {
         assertEquals("02:40", new Clock(0, 160).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void minutesRollOverContinuously() {
         assertEquals("04:43", new Clock(0, 1723).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void hourAndMinutesRollOver() {
         assertEquals("03:40", new Clock(25, 160).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void hourAndMinutesRollOverContinuously() {
         assertEquals("11:01", new Clock(201, 3001).toString());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void hourAndMinutesRollOverToExactlyMidnight() {
         assertEquals("00:00", new Clock(72, 8640).toString());
