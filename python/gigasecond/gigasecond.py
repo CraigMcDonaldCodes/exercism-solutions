@@ -1,2 +1,6 @@
+import datetime as dt
+
 def add(moment):
-    pass
+
+    return moment + dt.timedelta(seconds = 1e9)
+
