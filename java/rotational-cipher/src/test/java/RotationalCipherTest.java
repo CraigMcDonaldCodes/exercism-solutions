@@ -12,49 +12,42 @@ public class RotationalCipherTest {
         Assert.assertEquals("a", rotationalCipher.rotate("a"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateSingleCharacterBy1() {
         rotationalCipher = new RotationalCipher(1);
         Assert.assertEquals("b", rotationalCipher.rotate("a"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateSingleCharacterBy26() {
         rotationalCipher = new RotationalCipher(26);
         Assert.assertEquals("a", rotationalCipher.rotate("a"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateSingleCharacterBy13() {
         rotationalCipher = new RotationalCipher(13);
         Assert.assertEquals("z", rotationalCipher.rotate("m"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateSingleCharacterWithWrapAround() {
         rotationalCipher = new RotationalCipher(13);
         Assert.assertEquals("a", rotationalCipher.rotate("n"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateCapitalLetters() {
         rotationalCipher = new RotationalCipher(5);
         Assert.assertEquals("TRL", rotationalCipher.rotate("OMG"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateSpaces() {
         rotationalCipher = new RotationalCipher(5);
         Assert.assertEquals("T R L", rotationalCipher.rotate("O M G"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rotateNumbers() {
         rotationalCipher = new RotationalCipher(4);
