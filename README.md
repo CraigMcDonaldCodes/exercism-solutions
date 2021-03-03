@@ -8,9 +8,10 @@ Solutions to Exercism exercises.
  * C
  * JavaScript
  * Rust
- * Kotlin
  * Python
+ * Dart
  * Go
+ * Kotlin
  * C#
 
 <https://exercism.io>
