@@ -1,4 +1,11 @@
-﻿# C#
+﻿# Dart
+.dart_tool/
+.packages
+build/
+pubspec.lock
+doc/api
+
+# C#
 .vs/
 .vscode/
 [Bb]in/
