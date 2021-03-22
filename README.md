@@ -4,14 +4,15 @@ Solutions to Exercism exercises.
 
 ### Languages
 
- * Java
+ * Go
+ * C#
  * C
  * JavaScript
  * Rust
  * Python
+ * Java
  * Dart
- * Go
  * Kotlin
- * C#
+
 
 <https://exercism.io>
