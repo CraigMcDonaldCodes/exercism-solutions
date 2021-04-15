@@ -67,7 +67,7 @@ public class MatchingBracketsTests
         Assert.True(MatchingBrackets.IsPaired(value));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Paired_and_nested_brackets()
     {
         var value = "([{}({}[])])";
@@ -109,14 +109,14 @@ public class MatchingBracketsTests
         Assert.False(MatchingBrackets.IsPaired(value));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Math_expression()
     {
         var value = "(((185 + 223.85) * 15) - 543)/2";
         Assert.True(MatchingBrackets.IsPaired(value));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Complex_latex_expression()
     {
         var value = "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)";
