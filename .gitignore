@@ -1,32 +1,16 @@
-﻿# Dart
-.dart_tool/
-.packages
-build/
-pubspec.lock
-doc/api
-
-# C#
+﻿# C#
 .vs/
 .vscode/
 [Bb]in/
 [Oo]bj/
 [Pp]ackages/
 
-# Java
-.gradle/
-.project
-.settings/
+# Dart
+.dart_tool/
+.packages
 build/
-
-# JavaScript
-node_modules/
-
-# Rust
-Cargo.lock
-target/
-
-# Python
-__pycache__/
+pubspec.lock
+doc/api
 
 # Exercism
 .exercism/
@@ -39,3 +23,46 @@ __pycache__/
 *.so
 *.test
 *.tmp
+
+# Haskell
+
+dist
+dist-*
+cabal-dev
+*.o
+*.hi
+*.hie
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+.hsenv
+.cabal-sandbox/
+cabal.sandbox.config
+*.prof
+*.aux
+*.hp
+*.eventlog
+.stack-work/
+cabal.project.local
+cabal.project.local~
+.HTF/
+.ghc.environment.*
+
+# Java
+.gradle/
+.project
+.settings/
+build/
+
+# JavaScript
+node_modules/
+
+# Python
+__pycache__/
+
+# Rust
+Cargo.lock
+target/
+
