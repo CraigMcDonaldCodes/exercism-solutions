@@ -10,6 +10,7 @@ Solutions to Exercism exercises.
  * Python
  * Haskell
  * JavaScript
+ * TypeScript
  * Kotlin
  * C#
  * Dart
