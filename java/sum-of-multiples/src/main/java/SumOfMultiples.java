@@ -4,7 +4,6 @@ class SumOfMultiples {
     private final int number;
     private final int sum;
 
-    ////////////////////////////////////////////////////////////////////////////////
     public SumOfMultiples(int number, int[] set) {
 
         this.number = number;
@@ -12,17 +11,12 @@ class SumOfMultiples {
         sum = computeSum();
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////
     public int getSum() {
         return sum;
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////
     private int computeSum() {
 
-        // TODO: Bad variable names?
         int total = 0;
 
         for (int i = 1; i < number; i++) {
