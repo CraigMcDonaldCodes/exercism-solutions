@@ -51,6 +51,7 @@ cabal.project.local~
 .ghc.environment.*
 
 # Java
+.classpath
 .gradle/
 .project
 .settings/
