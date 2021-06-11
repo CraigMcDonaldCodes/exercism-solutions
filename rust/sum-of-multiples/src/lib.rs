@@ -10,7 +10,7 @@ pub fn sum_of_multiples(limit: u32, factors: &[u32]) -> u32 {
 
         for f in factors {
 
-            if (*f != 0u32) && n % f == 0 {
+            if (*f != 0) && n % f == 0 {
                 sum += n;
                 break
             }
