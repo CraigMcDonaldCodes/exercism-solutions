@@ -1,2 +1,12 @@
+closingChar = {
+    ']': '[',
+    '}': '{',
+    ')': '('
+}
+
 def is_paired(input_string):
-    pass
+
+    stack = []
+
+    for c in input_string:
+        

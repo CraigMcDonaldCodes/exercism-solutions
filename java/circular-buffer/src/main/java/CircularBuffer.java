@@ -23,7 +23,8 @@ public class CircularBuffer<T> {
     }
 
     public void overwrite(T value) {
-
+        buffer[writePos] = value;
+        writePos = (writePos + 1) % buffer.length;
     }
 
     public T read() throws BufferIOException {
@@ -47,8 +48,7 @@ public class CircularBuffer<T> {
         if (currentValue != null) {
             throw new BufferIOException(MSG_BUFFER_FULL);
         } else {
-            buffer[writePos] = value;
-            writePos = (writePos + 1) % buffer.length;
+            overwrite(value);
         }
     }
 }
