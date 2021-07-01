@@ -1,8 +1,14 @@
-//
-// This is only a SKELETON file for the 'Armstrong Numbers' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+export const isArmstrongNumber = numberToCheck => {
 
-export const isArmstrongNumber = () => {
-  throw new Error('Remove this statement and implement this function');
+  const power = numberToCheck.toString().length;
+  let currentValue = numberToCheck;
+  let sum = 0;
+
+  while (currentValue > 0) {
+
+    sum += Math.pow(currentValue % 10, power);
+    currentValue = Math.trunc(currentValue / 10);
+  }
+
+  return numberToCheck === sum;
 };
