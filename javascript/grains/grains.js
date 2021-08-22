@@ -19,6 +19,6 @@ export const square = (n) => {
   }
 };
 
-export const total = (n) => {
+export const total = () => {
   return BigInt(2) ** BigInt(MAX_VALUE) - BigInt(1);
 };
