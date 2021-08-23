@@ -1,18 +1,30 @@
-//
-// This is only a SKELETON file for the 'Grade School' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class GradeSchool {
+
+  #grades = {
+  }
+
   roster() {
-    throw new Error('Remove this statement and implement this function');
+    return this.#grades;
   }
 
-  add() {
-    throw new Error('Remove this statement and implement this function');
+  add(student, grade) {
+
+    if (grade in this.#grades) {
+      this.#grades[grade].push(student);
+      this.#grades[grade].sort();
+    } else {
+      this.#grades[grade] = [student];
+    }
   }
 
-  grade() {
-    throw new Error('Remove this statement and implement this function');
+  grade(grade) {
+
+    let result = [];
+
+    if (grade in this.#grades && this.#grades[grade].length > 0) {
+      result = this.#grades[grade];
+    }
+
+    return result;
   }
 }
