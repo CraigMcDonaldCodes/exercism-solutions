@@ -5,6 +5,7 @@ import java.util.List;
 
 /** POJO representing a User in the database. */
 public class User {
+
     private final String name;
     private final List<Iou> owes;
     private final List<Iou> owedBy;
@@ -34,6 +35,7 @@ public class User {
     }
 
     public static class Builder {
+
         private String name;
         private final List<Iou> owes = new ArrayList<>();
         private final List<Iou> owedBy = new ArrayList<>();

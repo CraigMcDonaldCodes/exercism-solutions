@@ -5,6 +5,7 @@
  * If this is in a user's "owedBy", then {@link name} owes the user this {@link amount}.
  */
 public class Iou {
+
     public final String name;
     public final double amount;
 

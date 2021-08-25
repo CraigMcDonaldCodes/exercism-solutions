@@ -1,10 +1,31 @@
-/*
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+public class RestApi {
 
-Please remove this comment when submitting your solution.
+    public RestApi() {
+    }
 
-*/
+    public RestApi(User... users) {
+    }
+
+    public String get(String url) {
+
+        return null;
+    }
+
+    public String get(String url, JSONObject payload) {
+
+        return null;
+    }
+
+    public JSONObject post(String url, JSONObject payload) {
+
+        return null;
+    }
+
+    public JSONObject put(String x, String y) {
+
+        return null;
+    }
+}
