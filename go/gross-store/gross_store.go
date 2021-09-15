@@ -45,12 +45,14 @@ func RemoveItem(bill, units map[string]int, item, unit string) bool {
 		return false
 	}
 
+	// If subtracting the supplied amount is negative, don't accept
 	if (bill[item] - units[unit]) < 0 {
 		return false
 	}
 
 	bill[item] -= units[unit]
 
+	// If the value is zero, remove the item from the bill
 	if bill[item] == 0 {
 		delete(bill, item)
 	}
