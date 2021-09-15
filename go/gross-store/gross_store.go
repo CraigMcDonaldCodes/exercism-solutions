@@ -1,26 +1,69 @@
 package gross
 
+var unitsMap = map[string]int{
+	"quarter_of_a_dozen": 3,
+	"half_of_a_dozen":    6,
+	"dozen":              12,
+	"small_gross":        120,
+	"gross":              144,
+	"great_gross":        1728,
+}
+
 // Units store the Gross Store unit measurement
 func Units() map[string]int {
-	panic("Please implement the Units() function")
+	return unitsMap
 }
 
 // NewBill create a new bill
 func NewBill() map[string]int {
-	panic("Please implement the NewBill() function")
+	return map[string]int{}
 }
 
 // AddItem add item to customer bill
 func AddItem(bill, units map[string]int, item, unit string) bool {
-	panic("Please implement the AddItem() function")
+
+	if v, ok := units[unit]; ok {
+		bill[item] = v
+		return true
+	}
+
+	return false
 }
 
 // RemoveItem remove item from customer bill
 func RemoveItem(bill, units map[string]int, item, unit string) bool {
-	panic("Please implement the RemoveItem() function")
+
+	// This could/should be cleaner
+
+	// Supplied item is not on the bill
+	if _, ok := bill[item]; !ok {
+		return false
+	}
+
+	// Supplied unit is not valid
+	if _, ok := units[unit]; !ok {
+		return false
+	}
+
+	if (bill[item] - units[unit]) < 0 {
+		return false
+	}
+
+	bill[item] -= units[unit]
+
+	if bill[item] == 0 {
+		delete(bill, item)
+	}
+
+	return true
 }
 
 // GetItem return the quantity of item that the customer has in his/her bill
 func GetItem(bill map[string]int, item string) (int, bool) {
-	panic("Please implement the GetItem() function")
+
+	if v, ok := bill[item]; ok {
+		return v, true
+	}
+
+	return 0, false
 }
