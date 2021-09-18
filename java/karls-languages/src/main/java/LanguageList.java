@@ -1,34 +1,44 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class LanguageList {
+
     private final List<String> languages = new ArrayList<>();
 
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Please implement the isEmpty() method");
+        return languages.isEmpty();
     }
 
     public void addLanguage(String language) {
-        throw new UnsupportedOperationException("Please implement the addLanguage() method");
+        Objects.requireNonNull(language);
+        languages.add(language);
     }
 
     public void removeLanguage(String language) {
-        throw new UnsupportedOperationException("Please implement the removeLanguage() method");
+        Objects.requireNonNull(language);
+        languages.remove(language);
     }
 
     public String firstLanguage() {
-        throw new UnsupportedOperationException("Please implement the firstLanguage() method");
+
+        if (languages.isEmpty()) {
+            throw new IllegalArgumentException("No languages set.");
+        }
+
+        return languages.get(0);
     }
 
     public int count() {
-        throw new UnsupportedOperationException("Please implement the count() method");
+        return languages.size();
     }
 
     public boolean containsLanguage(String language) {
-        throw new UnsupportedOperationException("Please implement the containsLanguage() method");
+        Objects.requireNonNull(language);
+        return languages.contains(language);
     }
 
     public boolean isExciting() {
-        throw new UnsupportedOperationException("Please implement the isExciting() method");
+        return languages.contains("Java") || languages.contains("Kotlin");
     }
 }
