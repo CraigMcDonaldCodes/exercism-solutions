@@ -29,7 +29,7 @@ bool is_isogram(const char phrase[]) {
 
             // If the chars are equal then not an isogram
             // return early
-            // Probably a better way to continously call tolower()
+            // Probably a better way than continuously calling tolower()
             if (tolower(phrase[i]) == tolower(phrase[k])) {
                 return false;
             }
