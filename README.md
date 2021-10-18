@@ -11,6 +11,7 @@ Solutions to Exercism exercises.
  * Haskell
  * JavaScript
  * TypeScript
+ * Ruby
  * Kotlin
  * C#
  * Dart
