@@ -1,8 +1,6 @@
 // @ts-check
-//
-// The line above enables type checking for this file. Various IDEs interpret
-// the @ts-check directive. It will give you helpful autocompletion when
-// implementing this exercise.
+
+const LICENSE_VEHICLES = ["car", "truck"];
 
 /**
  * Determines whether or not you need a licence to operate a certain kind of vehicle.
@@ -11,7 +9,7 @@
  * @returns {boolean} whether a license is required
  */
 export function needsLicense(kind) {
-  throw new Error('Please implement the needsLicense function');
+  return LICENSE_VEHICLES.includes(kind.toLowerCase());
 }
 
 /**
@@ -23,7 +21,16 @@ export function needsLicense(kind) {
  * @returns {string} a sentence of advice which option to choose
  */
 export function chooseVehicle(option1, option2) {
-  throw new Error('Please implement the chooseVehicle function');
+
+  let vehicle = undefined;
+
+  if (option1 < option2) {
+    vehicle = option1;
+  } else {
+    vehicle = option2;
+  }
+
+  return `${vehicle} is clearly the better choice.`;
 }
 
 /**
@@ -35,5 +42,16 @@ export function chooseVehicle(option1, option2) {
  * @returns expected resell price in the dealership
  */
 export function calculateResellPrice(originalPrice, age) {
-  throw new Error('Please implement the calculateResellPrice function');
+
+  let discount = undefined;
+
+  if (age < 3) {
+    discount = 0.8;
+  } else if (age <= 10) {
+    discount = 0.7;
+  } else {
+    discount = 0.5;
+  }
+
+  return originalPrice * discount;
 }
