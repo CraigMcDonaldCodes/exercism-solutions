@@ -1,8 +1,19 @@
 // @ts-check
-//
-// The line above enables type checking for this file. Various IDEs interpret
-// the @ts-check directive. It will give you helpful autocompletion when
-// implementing this exercise.
+
+const JUICING_TIMES = {
+  'Pure Strawberry Joy': 0.5,
+  'Energizer': 1.5,
+  'Green Garden': 1.5,
+  'Tropical Island': 3,
+  'All or Nothing': 5,
+  DEFAULT: 2.5,
+};
+
+const LIME_WEDGES = {
+  small: 6,
+  medium: 8,
+  large: 10,
+};
 
 /**
  * Determines how long it takes to prepare a certain juice.
@@ -11,7 +22,14 @@
  * @returns {number} time in minutes
  */
 export function timeToMixJuice(name) {
-  throw new Error('Please implement the timeToMixJuice function');
+
+  const time = JUICING_TIMES[name];
+
+  if (time === undefined) {
+    return JUICING_TIMES.DEFAULT;
+  } else {
+    return time;
+  }
 }
 
 /**
@@ -23,7 +41,27 @@ export function timeToMixJuice(name) {
  * @returns {number} number of limes cut
  */
 export function limesToCut(wedgesNeeded, limes) {
-  throw new Error('Please implement the limesToCut function');
+
+  // There is probably a nicer way of doing this
+
+  if (wedgesNeeded === 0 || limes.length === 0) {
+    return 0;
+  }
+
+  let count = 0;
+
+  while (limes.length) {
+
+    let lime = limes.shift();
+    wedgesNeeded -= LIME_WEDGES[lime];
+    count++;
+
+    if (wedgesNeeded <= 0) {
+      break;
+    }
+  }
+
+  return count;
 }
 
 /**
@@ -34,5 +72,14 @@ export function limesToCut(wedgesNeeded, limes) {
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
-  throw new Error('Please implement the remainingOrders function');
+
+  while (timeLeft > 0) {
+
+    let order = orders.shift();
+    let time = JUICING_TIMES[order] === undefined ? JUICING_TIMES.DEFAULT : JUICING_TIMES[order];
+
+    timeLeft -= time;
+  }
+
+  return orders;
 }
