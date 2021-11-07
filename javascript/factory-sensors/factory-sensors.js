@@ -1,8 +1,13 @@
 // @ts-check
 
+const HUMIDITY_MAX = 70;
+const TEMP_MAX = 500;
+const TEMP_SHUTDOWN = 600;
+
 export class ArgumentError extends Error {}
 
 export class OverheatingError extends Error {
+
   constructor(temperature) {
     super(`The temperature is ${temperature} ! Overheating !`);
     this.temperature = temperature;
@@ -16,7 +21,12 @@ export class OverheatingError extends Error {
  * @throws {Error}
  */
 export function checkHumidityLevel(humidityPercentage) {
-  throw new Error('Implement the checkHumidity function');
+
+  if (humidityPercentage > HUMIDITY_MAX) {
+    throw new Error();
+  } else {
+    return;
+  }
 }
 
 /**
@@ -26,7 +36,14 @@ export function checkHumidityLevel(humidityPercentage) {
  * @throws {ArgumentError|OverheatingError}
  */
 export function reportOverheating(temperature) {
-  throw new Error('Implement the reportOverheating function');
+
+  if (temperature === null) {
+    throw new ArgumentError();
+  } else if (temperature > TEMP_MAX) {
+    throw new OverheatingError(temperature);
+  } else {
+    return;
+  }
 }
 
 /**
@@ -41,5 +58,22 @@ export function reportOverheating(temperature) {
  * @throws {ArgumentError|OverheatingError|Error}
  */
 export function monitorTheMachine(actions) {
-  throw new Error('Implement the monitorTheMachine function');
+
+  try {
+    actions.check();
+  } catch (err) {
+
+    if (err instanceof ArgumentError) {
+      actions.alertDeadSensor();
+    } else if (err instanceof OverheatingError) {
+
+      if (err.temperature < TEMP_SHUTDOWN) {
+        actions.alertOverheating();
+      } else {
+        actions.shutdown();
+      }
+    } else {
+      throw err;
+    }
+  }
 }
