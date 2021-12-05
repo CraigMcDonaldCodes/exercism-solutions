@@ -16,6 +16,7 @@ Solutions to Exercism exercises.
  * C#
  * Dart
  * Go
+ * Clojure
 
 
 <https://exercism.io>
