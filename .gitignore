@@ -25,7 +25,6 @@ doc/api
 *.tmp
 
 # Haskell
-
 dist
 dist-*
 cabal-dev
@@ -68,3 +67,7 @@ __pycache__/
 Cargo.lock
 target/
 
+# Clojure
+.clj-kondo/
+.cpcache/
+.lsp/
