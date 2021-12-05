@@ -8,7 +8,7 @@
    and returns how many minutes the lasagna still has to remain in the oven."
   [actual-time]
   (- expected-time actual-time)
-  )
+)
 
 (defn prep-time
   "Takes the number of layers added to the lasagna,
