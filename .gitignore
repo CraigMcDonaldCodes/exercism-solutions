@@ -1,4 +1,7 @@
-﻿# C#
+﻿# C
+vendor/
+
+# C#
 .vs/
 .vscode/
 [Bb]in/
