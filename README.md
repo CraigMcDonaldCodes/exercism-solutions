@@ -4,19 +4,19 @@ Solutions to Exercism exercises.
 
 ### Languages
 
- * Java
- * Rust
- * C
- * Python
- * Haskell
- * JavaScript
- * TypeScript
- * Ruby
- * Kotlin
- * C#
- * Dart
- * Go
- * Clojure
+ - C
+ - C#
+ - Clojure
+ - Dart
+ - **Go**
+ - Haskell
+ - **Java**
+ - **JavaScript**
+ - Kotlin
+ - **Python**
+ - Ruby
+ - Rust
+ - TypeScript
 
 
 <https://exercism.io>
