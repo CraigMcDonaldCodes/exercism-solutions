@@ -54,14 +54,19 @@ Description("7/25/2019 13:45:00")
 // Output: "You have an appointment on Thursday, July 25, 2019, at 13:45."
 ```
 
-## 5. Return the anniversary date
+## 5. Return the anniversary date of the salon's opening
 
-Implement the `AnniversaryDate` function that returns this year's anniversary date:
+Implement the `AnniversaryDate` function that returns the anniversary date of the salon's opening for the current year in UTC.
+
+Assuming the current year is 2020:
 
 ```go
 AnniversaryDate()
-// Output: 2020-09-15
+
+// Output: 2020-09-15 00:00:00 +0000 UTC
 ```
+
+**Note:** the return value is a `time.Time` and the time of day doesn't matter.
 
 ## Source
 
