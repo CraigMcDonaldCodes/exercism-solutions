@@ -1,5 +1,10 @@
 # Bank Account
 
+Welcome to Bank Account on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Simulate a bank account supporting opening/closing, withdrawals, and deposits
 of money. Watch out for concurrent transactions!
 
@@ -26,27 +31,47 @@ it.
 
 Have fun!
 
-## Coding the solution
+## Implementation Notes
 
-Look for a stub file having the name bank_account.go
-and place your solution code in that file.
+If Open is given a negative initial deposit, it must return nil.
+Deposit must handle a negative amount as a withdrawal. Withdrawals must
+not succeed if they result in a negative balance.
+If any Account method is called on an closed account, it must not modify
+the account and must return ok = false.
 
-## Running the tests
+The tests will execute some operations concurrently. You should strive
+to ensure that operations on the Account leave it in a consistent state.
+For example: multiple goroutines may be depositing and withdrawing money
+simultaneously, two withdrawals occurring concurrently should not be able
+to bring the balance into the negative.
 
-To run the tests run the command `go test` from within the exercise directory.
+If you are new to concurrent operations in Go it will be worth looking
+at the sync package, specifically Mutexes:
 
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
+https://golang.org/pkg/sync/
+https://tour.golang.org/concurrency/9
+https://gobyexample.com/mutexes
 
-    go test -v --bench . --benchmem
+## Source
 
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
+### Created by
 
-## Further information
+- @soniakeys
 
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @alebaffa
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @homelinen
+- @JensChrG
+- @juergenhoetzel
+- @kytrinyx
+- @leenipper
+- @parroty
+- @petertseng
+- @robphoenix
+- @sebito91
+- @tleen

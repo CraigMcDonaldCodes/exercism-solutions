@@ -1,18 +1,19 @@
 package account
 
-type BankAccount struct {
-	balance int
+// Define the Account type here.
+
+func Open(amount int64) *Account {
+	panic("Please implement the Open function")
 }
 
-func Open(amount int) BankAccount {
-
-	account := BankAccount{
-		balance: amount,
-	}
-
-	return account
+func (a *Account) Balance() (int64, bool) {
+	panic("Please implement the Balance function")
 }
 
-func (account *BankAccount) Balance() (int, error) {
-	return 1, nil
+func (a *Account) Deposit(amount int64) (int64, bool) {
+	panic("Please implement the Deposit function")
+}
+
+func (a *Account) Close() (int64, bool) {
+	panic("Please implement the Close function")
 }
