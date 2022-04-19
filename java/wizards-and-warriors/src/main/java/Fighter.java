@@ -1,40 +1,61 @@
 abstract class Fighter {
 
-    boolean isVulnerable() {
-        throw new UnsupportedOperationException("Please provide implementation for this method");
-    }
-
+    abstract boolean isVulnerable();
     abstract int damagePoints(Fighter fighter);
+
+    @Override
+    public String toString() {
+        return "Fighter is a " + this.getClass().getSimpleName();
+    }
 
 }
 
 class Warrior extends Fighter {
 
+    private static final int MIN_DAMAGE = 6;
+    private static final int MAX_DAMAGE = 10;
+
+    private boolean vulnerable = false;
+
     @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Please implement the toString() method with the required text");
+    public boolean isVulnerable() {
+        return vulnerable;
     }
 
     @Override
     int damagePoints(Fighter wizard) {
-        throw new UnsupportedOperationException("Please implement Warrior.damagePoints() method");
+
+        if (wizard.isVulnerable()) {
+            return MAX_DAMAGE;
+        } else {
+            return MIN_DAMAGE;
+        }
     }
 }
 
 class Wizard extends Fighter {
 
+    private static final int MIN_DAMAGE = 3;
+    private static final int MAX_DAMAGE = 12;
+
+    private boolean spellPrepared = false;
+
     @Override
     boolean isVulnerable() {
-        throw new UnsupportedOperationException("Please implement Wizard.isVulnerable() method");
+        return !spellPrepared;
     }
 
     @Override
     int damagePoints(Fighter warrior) {
-        throw new UnsupportedOperationException("Please implement Wizard.damagePoints() method");
+
+        if (spellPrepared) {
+            return MAX_DAMAGE;
+        } else {
+            return MIN_DAMAGE;
+        }
     }
 
     void prepareSpell() {
-        throw new UnsupportedOperationException("Please implement Wizard.prepareSpell() method");
+        spellPrepared = true;
     }
-
 }
