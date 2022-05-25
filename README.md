@@ -8,12 +8,12 @@ Solutions to Exercism exercises.
  - C#
  - Clojure
  - Dart
- - **Go**
+ - Go
  - Haskell
- - **Java**
- - **JavaScript**
+ - Java
+ - JavaScript
  - Kotlin
- - **Python**
+ - Python
  - Ruby
  - Rust
  - TypeScript
