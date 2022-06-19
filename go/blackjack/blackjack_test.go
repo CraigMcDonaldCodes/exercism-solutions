@@ -73,100 +73,16 @@ func TestParseCard(t *testing.T) {
 			card: "king",
 			want: 10,
 		},
+		{
+			name: "parse other",
+			card: "joker",
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := ParseCard(tt.card); got != tt.want {
 				t.Errorf("ParseCard(%s) = %d, want %d", tt.card, got, tt.want)
-			}
-		})
-	}
-}
-
-func TestBlackjack(t *testing.T) {
-	type hand struct {
-		card1, card2 string
-	}
-	tests := []struct {
-		name string
-		hand hand
-		want bool
-	}{
-		{
-			name: "blackjack with ten (ace first)",
-			hand: hand{card1: "ace", card2: "ten"},
-			want: true,
-		},
-		{
-			name: "blackjack with jack (ace first)",
-			hand: hand{card1: "ace", card2: "jack"},
-			want: true,
-		},
-		{
-			name: "blackjack with queen (ace first)",
-			hand: hand{card1: "ace", card2: "queen"},
-			want: true,
-		},
-		{
-			name: "blackjack with king (ace first)",
-			hand: hand{card1: "ace", card2: "king"},
-			want: true,
-		},
-		{
-			name: "blackjack with ten (ace second)",
-			hand: hand{card2: "ace", card1: "ten"},
-			want: true,
-		},
-		{
-			name: "blackjack with jack (ace second)",
-			hand: hand{card2: "ace", card1: "jack"},
-			want: true,
-		},
-		{
-			name: "blackjack with queen (ace second)",
-			hand: hand{card2: "ace", card1: "queen"},
-			want: true,
-		},
-		{
-			name: "blackjack with king (ace second)",
-			hand: hand{card2: "ace", card1: "king"},
-			want: true,
-		},
-		{
-			name: "no blackjack with ace and five",
-			hand: hand{card2: "ace", card1: "five"},
-			want: false,
-		},
-		{
-			name: "no blackjack with ace and nine",
-			hand: hand{card2: "ace", card1: "nine"},
-			want: false,
-		},
-		{
-			name: "no blackjack with two aces",
-			hand: hand{card2: "ace", card1: "ace"},
-			want: false,
-		},
-		{
-			name: "no blackjack with two figures",
-			hand: hand{card2: "queen", card1: "jack"},
-			want: false,
-		},
-		{
-			name: "no blackjack with king and five",
-			hand: hand{card2: "king", card1: "five"},
-			want: false,
-		},
-		{
-			name: "no blackjack with eight and five",
-			hand: hand{card2: "eight", card1: "five"},
-			want: false,
-		},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := IsBlackjack(tt.hand.card1, tt.hand.card2); got != tt.want {
-				t.Errorf("IsBlackjack(%s, %s) = %t, want %t", tt.hand.card1, tt.hand.card2, got, tt.want)
 			}
 		})
 	}
