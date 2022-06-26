@@ -7,6 +7,7 @@ Solutions to Exercism exercises.
  - C
  - C#
  - Clojure
+ - Crystal
  - Dart
  - Go
  - Haskell
