@@ -6,20 +6,15 @@ public class BracketChecker {
     private final boolean matched;
     private final Map<Character, Character> closingChar;
 
-    ////////////////////////////////////////////////////////////////////////////////
     public BracketChecker(final String text) {
         closingChar = Map.of(']', '[', '}', '{', ')', '(');
         matched = calculate(text);
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////
     public boolean areBracketsMatchedAndNestedCorrectly() {
         return matched;
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////
     private boolean calculate(final String text) {
 
         var stack = new Stack<Character>();
