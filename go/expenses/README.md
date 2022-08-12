@@ -41,9 +41,9 @@ func espGreeting(name string) string {
 	return fmt.Sprintf("¡Hola %s, mucho gusto!", name)
 }
 
-greeting := engGreeting
+greeting := espGreeting
 dialog("Alice", greeting)
-// Output:
+// =>
 // ¡Hola Alice, mucho gusto!
 // I'm a dialog bot.
 ```
@@ -104,7 +104,7 @@ for i := 0; i < N; i++ {
 }
 ```
 
-A call to `fib` initializes the variables `n1` and `n2` and returns an anonymous function that, in turn, changes the values of these variables each time the function is called. Nth calls of the anonymous function return the Nth number of the Fibonacci sequence starting from 0. The anonymous inner function has access to the local variables (`n1` and `n2`) of the enclosing function `fib`. This is a great way to have function values keep state between calls. We say that the anonymous function is a closure of the variables `n1` and `n2`. [Closures][closure] are widely used in programming and you might see other languages supporting them.
+A call to `fib` declares the variables `n1` and `n2` and returns an anonymous function that, in turn, changes the values of these variables each time the function is called. Nth calls of the anonymous function return the Nth number of the Fibonacci sequence starting from 0. The anonymous inner function has access to the local variables (`n1` and `n2`) of the enclosing function `fib`. This is a great way to have function values keep state between calls. We say that the anonymous function is a closure of the variables `n1` and `n2`. [Closures][closure] are widely used in programming and you might see other languages supporting them.
 
 [closure]: https://en.wikipedia.org/wiki/Closure_(computer_programming)
 
@@ -116,7 +116,7 @@ In this exercise, you are going to build a program to help Bob manage and analyz
 
 Bob works with `Record`s and `DaysPeriod`s.
 
-A `Record` represents and expense record that contains the day in which the expense was made, the money spent, and the category of the expense.
+A `Record` represents an expense record that contains the day in which the expense was made, the money spent, and the category of the expense.
 
 ```go
 // Record represents an expense record.
@@ -128,7 +128,7 @@ type Record struct {
 ```
 
 A `DaysPeriod` represents a range of days and includes all days from the day `From` up to the day `To`.
-Both ends are included in the range
+Both ends are included in the range.
 
 ```go
 // DaysPeriod represents a period of days.
@@ -166,7 +166,7 @@ func Day1Records(Record r) bool {
 }
 
 Filter(records, Day1Records)
-// Output:
+// =>
 // [
 //   {Day: 1, Amount: 15, Category: "groceries"}
 // ]
@@ -191,7 +191,7 @@ records := []Record{
 period := DaysPeriod{From: 1, To: 15}
 
 Filter(records, ByDaysPeriod(period))
-// Output:
+// =>
 // [
 //   {Day: 1, Amount: 15, Category: "groceries"},
 //   {Day: 11, Amount: 300, Category: "utility-bills"},
@@ -204,7 +204,7 @@ Filter(records, ByDaysPeriod(period))
 Other than filtering records by a period of time, Bob also needs to filter records by its category.
 
 Implement the `ByCategory` function that will help Bob create such filters.
-This function accepts a category and returns function that takes a record and tells whether the record is in the period of time specified by the category given as argument.
+This function accepts a category and returns a function that takes a record and tells whether the category of this record is the same as the category given as the argument.
 
 ```go
 records := []Record{
@@ -215,7 +215,7 @@ records := []Record{
 }
 
 Filter(records, ByCategory("groceries"))
-// Output:
+// =>
 // [
 //   {Day: 1, Amount: 15, Category: "groceries"},
 //   {Day: 12, Amount: 28, Category: "groceries"},
@@ -226,7 +226,7 @@ Filter(records, ByCategory("groceries"))
 
 Bob also wants to know the total amount of the expenses in a period of time.
 
-Implement the `TotalByPeriod` function to return a sum of expenses in the days period
+Implement the `TotalByPeriod` function to return a sum of expenses in the days period.
 
 ```go
 records := []Record{
@@ -239,10 +239,10 @@ p1 := DaysPeriod{From: 1, To: 30}
 p2 := DaysPeriod{From: 31, To: 60}
 
 TotalByPeriod(records, p1)
-// Output: 16
+// => 16
 
 TotalByPeriod(records, p2)
-// Output: 50
+// => 50
 ```
 
 ## 5. Calculate the total expenses for records of a category in a period
@@ -266,13 +266,13 @@ records := []Record{
 }
 
 CategoryExpenses(records, p1, "entertainment")
-// Output: 0, error(unknown category entertainment)
+// => 0, error(unknown category entertainment)
 
 CategoryExpenses(records, p1, "rent")
-// Output: 1300, nil
+// => 1300, nil
 
 CategoryExpenses(records, p2, "rent")
-// Output: 0, nil
+// => 0, nil
 ```
 
 ## Source
