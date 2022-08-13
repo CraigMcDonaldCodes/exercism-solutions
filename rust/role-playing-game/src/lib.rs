@@ -1,7 +1,3 @@
-// This stub file contains items which aren't used yet; feel free to remove this module attribute
-// to enable stricter warnings.
-#![allow(unused)]
-
 pub struct Player {
     pub health: u32,
     pub mana: Option<u32>,
@@ -10,10 +6,42 @@ pub struct Player {
 
 impl Player {
     pub fn revive(&self) -> Option<Player> {
-        unimplemented!("Revive this player")
+        if self.health <= 0 {
+            let mut p = Player {
+                health: 100,
+                mana: None,
+                level: self.level,
+            };
+
+            if self.level >= 10 {
+                p.mana = Some(100);
+            }
+
+            Some(p)
+        } else {
+            None
+        }
     }
 
     pub fn cast_spell(&mut self, mana_cost: u32) -> u32 {
-        unimplemented!("Cast a spell of cost {}", mana_cost)
+        let mut damage = 0u32;
+
+        match self.mana {
+            Some(mana) => {
+                if mana >= mana_cost {
+                    self.mana = Some(mana - mana_cost);
+                    damage = mana_cost * 2;
+                }
+            }
+            None => {
+                if mana_cost > self.health {
+                    self.health = 0;
+                } else {
+                    self.health -= mana_cost;
+                }
+            }
+        }
+
+        damage
     }
 }
