@@ -10,15 +10,12 @@ public class Anagram {
     private final String word;
     private final Map<Character, Integer> wordSummary;
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public Anagram(String word) {
 
         this.word = word;
         wordSummary = summarizeWord(word);
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public List<String> match(List<String> potentialWords) {
 
         var list = new ArrayList<String>();
@@ -53,8 +50,6 @@ public class Anagram {
         return list;
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     private Map<Character, Integer> summarizeWord(String word) {
 
         // TODO: Probably a nice way to use streams for this
