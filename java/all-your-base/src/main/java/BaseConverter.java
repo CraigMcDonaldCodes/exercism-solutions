@@ -1,14 +1,10 @@
-public class BaseConverter {
+/*
 
-    private int base;
-    private int[] sequence;
+Since this exercise has a difficulty of > 4 it doesn't come
+with any starter implementation.
+This is so that you get to practice creating classes and methods
+which is an important part of programming in Java.
 
-    public BaseConverter(int base, int[] sequence) {
+Please remove this comment when submitting your solution.
 
-        this.base = base;
-        this.sequence = sequence;
-    }
-
-    public int[] convertToBase(int newBase) {
-    }
-}
+*/
