@@ -8,15 +8,12 @@ class PrimeCalculator {
     private final int FIRST_PRIME = 2;
     private final List<Integer> primes;
 
-    ////////////////////////////////////////////////////////////////////////////////
     public PrimeCalculator() {
 
         primes = new ArrayList<>();
         primes.add(FIRST_PRIME);
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////
     int nth(int nth) {
 
         if (nth < MIN_SIZE) { throw new IllegalArgumentException(); }
@@ -28,8 +25,6 @@ class PrimeCalculator {
         return primes.get(nth - 1);
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////
     private void updatePrimes(final int nth) {
 
         for (int i = primes.get(primes.size() - 1) + 1; primes.size() < nth; i++) {
@@ -40,8 +35,6 @@ class PrimeCalculator {
         }
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////
     private boolean isPrime(final int value) {
 
         // There will be a much better way of doing this
