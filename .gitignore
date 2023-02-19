@@ -74,3 +74,7 @@ target/
 .clj-kondo/
 .cpcache/
 .lsp/
+
+# Zig
+zig-cache/
+zig-out/

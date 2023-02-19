@@ -18,6 +18,7 @@ Solutions to Exercism exercises.
  - Ruby
  - Rust
  - TypeScript
+ - Zig
 
 
 <https://exercism.io>
