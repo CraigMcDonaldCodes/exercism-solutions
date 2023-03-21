@@ -9,16 +9,16 @@ Solutions to Exercism exercises.
  - Clojure
  - Crystal
  - Dart
- - **Go**
+ - Go
  - Haskell
  - **Java**
  - JavaScript
  - Kotlin
- - **Python**
- - Ruby
- - Rust
+ - Python
+ - **Ruby**
+ - **Rust**
  - TypeScript
- - **Zig**
+ - Zig
 
 
 <https://exercism.io>
