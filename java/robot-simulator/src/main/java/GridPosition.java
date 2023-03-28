@@ -1,7 +1,6 @@
-class GridPosition {
+public class GridPosition {
 
     final int x;
-
     final int y;
 
     GridPosition(final int x, final int y) {
