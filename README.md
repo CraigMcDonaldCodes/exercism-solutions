@@ -18,7 +18,7 @@ Solutions to Exercism exercises.
  - **Ruby**
  - **Rust**
  - TypeScript
- - **Zig**
+ - Zig
 
 
 <https://exercism.io>
