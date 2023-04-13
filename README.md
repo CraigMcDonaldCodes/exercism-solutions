@@ -9,13 +9,13 @@ Solutions to Exercism exercises.
  - Clojure
  - Crystal
  - Dart
- - **Go**
+ - Go
  - Haskell
  - **Java**
  - JavaScript
  - Kotlin
- - Python
- - **Ruby**
+ - **Python**
+ - Ruby
  - **Rust**
  - TypeScript
  - Zig
