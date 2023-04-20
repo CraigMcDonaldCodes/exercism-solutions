@@ -11,7 +11,7 @@ Solutions to Exercism exercises.
  - Dart
  - Go
  - Haskell
- - **Java**
+ - Java
  - JavaScript
  - Kotlin
  - **Python**
