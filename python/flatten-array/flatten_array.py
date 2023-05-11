@@ -1,12 +1,22 @@
-def flatten(iterable):
+"""
+Solution to Exercism 'flattern array' problem.
+"""
 
-    data = []
+from typing import List
 
-    for i in iterable:
-        if type(i) == 'list':
-            data.append(flatten(i))
+
+def flatten(data: List) -> List:
+    """Flatten a nested list"""
+
+    result = []
+
+    for item in data:
+        if item is None:
+            continue
+
+        if isinstance(item, List):
+            result.extend(flatten(item))
         else:
-            data.append(i)
+            result.append(item)
 
-    return data
-
+    return result
