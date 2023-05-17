@@ -1,19 +1,21 @@
-/// Determine whether a sentence is a pangram.
 use std::collections::HashSet;
 
+const CHAR_A: u8 = 97;
+const CHAR_Z: u8 = 122;
+const AZ_LEN: usize = 26;
+
+/// Determine whether a sentence is a pangram.
 pub fn is_pangram(sentence: &str) -> bool {
-
-    // unimplemented!("Is {} a pangram?", sentence);
-
     let mut set = HashSet::new();
+    let sentence = sentence.to_lowercase();
 
     for c in sentence.chars() {
+        let c = c as u8;
 
-        if c.is_ascii_alphabetic() {
+        if c >= CHAR_A && c <= CHAR_Z {
             set.insert(c);
         }
     }
 
-    // println!("{}", set.len());
-    set.len() == 26
+    set.len() == AZ_LEN
 }
