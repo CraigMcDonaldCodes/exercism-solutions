@@ -5,13 +5,13 @@ Solutions to Exercism exercises.
 ### Languages
 
  - **C**
- - **C#**
+ - C#
  - Clojure
  - Crystal
  - Dart
  - Go
  - Haskell
- - Java
+ - **Java**
  - JavaScript
  - Kotlin
  - **Python**
