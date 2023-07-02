@@ -9,6 +9,11 @@ test-framework/
 [Oo]bj/
 [Pp]ackages/
 
+# Clojure
+.clj-kondo/
+.cpcache/
+.lsp/
+
 # Dart
 .dart_tool/
 .packages
@@ -70,11 +75,6 @@ __pycache__/
 # Rust
 Cargo.lock
 target/
-
-# Clojure
-.clj-kondo/
-.cpcache/
-.lsp/
 
 # Zig
 zig-cache/
