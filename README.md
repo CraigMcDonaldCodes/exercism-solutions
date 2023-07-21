@@ -9,7 +9,7 @@ Solutions to Exercism exercises.
  - Clojure
  - Crystal
  - Dart
- - **Go**
+ - Go
  - Haskell
  - **Java**
  - JavaScript
@@ -18,7 +18,7 @@ Solutions to Exercism exercises.
  - Ruby
  - **Rust**
  - TypeScript
- - Zig
+ - **Zig**
 
 
 <https://exercism.io>
