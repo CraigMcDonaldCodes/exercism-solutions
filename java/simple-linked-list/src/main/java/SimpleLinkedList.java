@@ -6,15 +6,12 @@ public class SimpleLinkedList<T> {
     private Element<T> currentElement;
     private int size;
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public SimpleLinkedList() {
 
         currentElement = null;
         size = 0;
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public SimpleLinkedList(T[] data) {
 
         size = 0;
@@ -27,8 +24,6 @@ public class SimpleLinkedList<T> {
         }
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public T pop() {
 
         if (size == 0) { throw new NoSuchElementException(); }
@@ -41,15 +36,11 @@ public class SimpleLinkedList<T> {
         return poppedElement.getData();
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public int size() {
 
         return size;
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public void push(T item) {
 
         var newElement = new Element(currentElement, item);
@@ -57,8 +48,6 @@ public class SimpleLinkedList<T> {
         size++;
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public void reverse() {
 
         // No idea if this is a good solution
@@ -76,8 +65,6 @@ public class SimpleLinkedList<T> {
         size = newSize;
     }
 
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public T[] asArray(Class itemClass) {
 
         // No idea why they want to pass in the `Class` param
