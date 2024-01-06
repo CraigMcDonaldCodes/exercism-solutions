@@ -16,9 +16,9 @@ Solutions to Exercism exercises.
  - Kotlin
  - Python
  - Ruby
- - **Rust**
+ - Rust
  - TypeScript
- - Zig
+ - **Zig**
 
 
 <https://exercism.io>
