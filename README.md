@@ -9,7 +9,7 @@ Solutions to Exercism exercises.
  - Clojure
  - Crystal
  - Dart
- - Go
+ - **Go**
  - Haskell
  - Java
  - JavaScript
