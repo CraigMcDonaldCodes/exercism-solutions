@@ -14,11 +14,10 @@ Solutions to Exercism exercises.
  - Java
  - JavaScript
  - Kotlin
- - **Python**
+ - Python
  - Ruby
  - **Rust**
  - TypeScript
  - **Zig**
-
 
 <https://exercism.io>
