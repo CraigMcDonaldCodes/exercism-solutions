@@ -4,7 +4,7 @@ Solutions to Exercism exercises.
 
 ### Languages
 
- - **C**
+ - C
  - C#
  - Clojure
  - Crystal
@@ -16,8 +16,8 @@ Solutions to Exercism exercises.
  - Kotlin
  - Python
  - Ruby
- - **Rust**
+ - Rust
  - TypeScript
- - **Zig**
+ - Zig
 
 <https://exercism.io>
